@@ -1,0 +1,25 @@
+﻿<Window x:Class="BingWebSearchDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BingWebSearchDemo"
+        mc:Ignorable="d"
+        Title="Cognitive Service mit Bing" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Web Suche...." ></Label>
+            <TextBox Name="tbSearchText" TextChanged="tbSearchText_TextChanged"></TextBox>
+            <ListView Name="lstView" Margin="0,10">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                        <GridViewColumn Header="Beschreibung" Width="350" DisplayMemberBinding="{Binding Snippet}" />
+                        <GridViewColumn Header="Name" Width="300" DisplayMemberBinding="{Binding Name}" />                        
+                    </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
